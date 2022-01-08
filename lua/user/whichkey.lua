@@ -95,6 +95,7 @@ local mappings = {
   },
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+  ["o"] = { ':<C-u>call append(line("."), repeat([""], v:count1))<cr>', "New line" },
 
   p = {
     name = "Packer",
@@ -126,6 +127,7 @@ local mappings = {
       "<cmd>Gitsigns diffthis HEAD<cr>",
       "Diff",
     },
+    f = { ":DiffSave<cr>", "Diff with saved"},
   },
 
   l = {
@@ -159,6 +161,7 @@ local mappings = {
       "Workspace Symbols",
     },
   },
+
   s = {
     name = "Search",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
@@ -177,7 +180,8 @@ local mappings = {
     u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
     t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
     p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
-    f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
+    -- f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
+    f = { "<cmd>lua _FLOAT_TOGGLE()<cr>", "Float"},
     h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
     v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
   },

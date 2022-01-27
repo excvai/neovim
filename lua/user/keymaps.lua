@@ -58,7 +58,8 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Replace text without changing register's content
-keymap("v", "p", '"_dP', opts)
+keymap("v", "p", '"_dp', opts)
+keymap("v", "P", '"_dP', opts)
 
 -- Visual Block --
 -- Move text up and down

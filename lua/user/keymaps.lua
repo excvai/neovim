@@ -24,6 +24,9 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
+-- Window splitting
+keymap("n", "<C-w>h", "<C-w>s", opts)
+
 -- Jumplist mutations
 keymap("n", "k", "(v:count > 5 ? \"m\'\" . v:count : \"\") . \'k\'", expr_opts)
 keymap("n", "j", "(v:count > 5 ? \"m\'\" . v:count : \"\") . \'j\'", expr_opts)

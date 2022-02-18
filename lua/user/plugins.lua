@@ -51,7 +51,7 @@ return packer.startup(function(use)
   use {
     "kyazdani42/nvim-tree.lua",
     -- To fix bug with lsp diagnostic
-    commit = "3f4ed9b6c2598ab8304186486a05ae7a328b8d49"
+    -- commit = "3f4ed9b6c2598ab8304186486a05ae7a328b8d49"
   }
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
@@ -64,6 +64,7 @@ return packer.startup(function(use)
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
   use "tpope/vim-surround"
+  use "mattn/emmet-vim"
 
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out

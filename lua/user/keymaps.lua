@@ -27,6 +27,9 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 -- Window splitting
 keymap("n", "<C-w>h", "<C-w>s", opts)
 
+-- Toggle spell check
+keymap("n", "<F3>", ":set spell!<CR>", opts)
+
 -- Jumplist mutations
 keymap("n", "k", "(v:count > 5 ? \"m\'\" . v:count : \"\") . \'k\'", expr_opts)
 keymap("n", "j", "(v:count > 5 ? \"m\'\" . v:count : \"\") . \'j\'", expr_opts)
@@ -54,6 +57,9 @@ keymap("i", ",", ",<C-g>u", opts)
 keymap("i", ".", ".<C-g>u", opts)
 keymap("i", "!", "!<C-g>u", opts)
 keymap("i", "?", "?<C-g>u", opts)
+
+-- Toggle spell check
+keymap("i", "<F3>", "<C-O>:set spell!<CR>", opts)
 
 -- Visual --
 -- Stay in indent mode

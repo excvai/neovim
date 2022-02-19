@@ -1,8 +1,10 @@
 -- Find more schemas here: https://www.schemastore.org/json/
 local default_schemas = nil
-local status_ok, jsonls_settings = pcall(require, "nlspsettings.jsonls")
+local status_ok, jsonls_settings = pcall(require, "nlspsettings")
 if status_ok then
   default_schemas = jsonls_settings.get_default_schemas()
+else
+  vim.notify("nlspsettings.jsonls require failed!")
 end
 
 local schemas = {

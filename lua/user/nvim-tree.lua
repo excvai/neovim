@@ -1,5 +1,3 @@
--- following options are the default
--- each of these are documented in `:help nvim-tree.OPTION_NAME`
 vim.g.nvim_tree_icons = {
   default = "",
   symlink = "",
@@ -82,7 +80,7 @@ nvim_tree.setup {
   view = {
     width = 30,
     height = 30,
-    hide_root_folder = false,
+    hide_root_folder = true,
     side = "left",
     auto_resize = true,
     mappings = {

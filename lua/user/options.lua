@@ -32,7 +32,7 @@ local options = {
   wrap = false,                            -- display lines as one long line
   scrolloff = 4,                           -- is one of my fav
   sidescrolloff = 4,
-  spell = true,
+  spell = false,
 }
 
 for k, v in pairs(options) do

@@ -20,5 +20,6 @@ require "user.alpha"
 require "user.whichkey"
 require "user.autocommands"
 require "user.emmet"
+require "user.spelunker"
 
 require "user.helper-functions"

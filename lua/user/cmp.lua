@@ -127,4 +127,7 @@ cmp.setup {
     ghost_text = false,
     native_menu = false,
   },
+  completion = {
+    keyword_length = 3
+  }
 }

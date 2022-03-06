@@ -15,6 +15,9 @@ null_ls.setup({
 	sources = {
     diagnostics.eslint,
     code_actions.eslint,
-		formatting.prettier.with({ extra_args = { "--single-quote", "--jsx-single-quote" } })
+    formatting.prettier.with({
+      extra_args = { "--single-quote", "--jsx-single-quote" },
+      disabled_filetypes = { "html" }
+    })
 	},
 })

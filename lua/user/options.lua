@@ -39,4 +39,8 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
+-- Disable html tags rendering (check :help html.vim)
+vim.api.nvim_set_var('html_no_rendering', '1')
+
+-- Setup providers
 vim.api.nvim_set_var('node_host_prog', '/home/cvai/.yarn/bin/neovim-node-host')

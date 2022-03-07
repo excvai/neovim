@@ -13,12 +13,12 @@ local code_actions = null_ls.builtins.code_actions
 null_ls.setup({
 	debug = false,
 	sources = {
-    diagnostics.eslint.with({
+    diagnostics.eslint_d.with({
       condition = function(utils)
         return utils.root_has_file({ ".eslintrc", ".eslintrc.json", ".eslintrc.js" })
       end,
     }),
-    code_actions.eslint,
+    code_actions.eslint_d,
     formatting.prettier.with({
       extra_args = { "--single-quote", "--jsx-single-quote" },
       disabled_filetypes = { "html" }

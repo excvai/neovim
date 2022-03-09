@@ -6,12 +6,33 @@ end
 
 local actions = require "telescope.actions"
 
+-- Ignore preview of files that are bigger than a threshold
+local previewers = require('telescope.previewers')
+local previewers_utils = require('telescope.previewers.utils')
+local max_size = 100000
+local truncate_large_files = function(filepath, bufnr, opts)
+    opts = opts or {}
+    
+    filepath = vim.fn.expand(filepath)
+    vim.loop.fs_stat(filepath, function(_, stat)
+        if not stat then return end
+        if stat.size > max_size then
+            local cmd = {"head", "-c", max_size, filepath}
+            previewers_utils.job_maker(cmd, bufnr, opts)
+        else
+            previewers.buffer_previewer_maker(filepath, bufnr, opts)
+        end
+    end)
+end
+
 telescope.setup {
   defaults = {
 
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },
+
+    buffer_previewer_maker = truncate_large_files,
 
     mappings = {
       i = {

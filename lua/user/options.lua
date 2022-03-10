@@ -43,4 +43,6 @@ end
 vim.api.nvim_set_var('html_no_rendering', '1')
 
 -- Setup providers
-vim.api.nvim_set_var('node_host_prog', '/home/cvai/.yarn/bin/neovim-node-host')
+vim.api.nvim_set_var('loaded_node_provider', '0')
+vim.api.nvim_set_var('loaded_python3_provider', '0')
+-- vim.api.nvim_set_var('node_host_prog', '/home/cvai/.yarn/bin/neovim-node-host')

@@ -6,13 +6,27 @@ end
 
 local actions = require "telescope.actions"
 
+local ignore_list = {
+  "%.png",
+  "%.jpg",
+  "%.webp",
+  "%.min%.",
+  "%.git",
+  "%.github",
+
+  -- "node_modules",
+  -- ".next",
+  -- "out",
+  -- "build"
+}
+
 -- Ignore preview of files that are bigger than a threshold
 local previewers = require('telescope.previewers')
 local previewers_utils = require('telescope.previewers.utils')
 local max_size = 100000
 local truncate_large_files = function(filepath, bufnr, opts)
     opts = opts or {}
-    
+
     filepath = vim.fn.expand(filepath)
     vim.loop.fs_stat(filepath, function(_, stat)
         if not stat then return end
@@ -33,6 +47,17 @@ telescope.setup {
     path_display = { "smart" },
 
     buffer_previewer_maker = truncate_large_files,
+    file_ignore_patterns = ignore_list,
+    vimgrep_arguments = {
+      "rg",
+      "--color=never",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      "--smart-case",
+      "--hidden",
+    },
 
     mappings = {
       i = {
@@ -107,6 +132,10 @@ telescope.setup {
     -- }
     -- Now the picker_config_key will be applied every time you call this
     -- builtin picker
+
+    find_files = {
+      hidden = true
+    }
   },
   extensions = {
     -- Your extension configuration goes here:

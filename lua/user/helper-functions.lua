@@ -25,6 +25,7 @@ autocmd BufReadPost *
   \ endif
 ]]
 
+-- Disable some vim features on large files
 vim.cmd [[
 augroup LargeFile
         let g:large_file = 512000 " 500kb

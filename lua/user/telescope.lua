@@ -13,6 +13,8 @@ local ignore_list = {
   "%.min%.",
   "%.git",
   "%.github",
+  "yarn.lock",
+  "package-lock.json"
 
   -- "node_modules",
   -- ".next",

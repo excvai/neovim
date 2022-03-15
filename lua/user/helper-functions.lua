@@ -41,7 +41,7 @@ augroup LargeFile
                 \ let f=expand("<afile>") |
                 \ if getfsize(f) > g:large_file |
                         \ set eventignore+=FileType |
-                        \ setlocal noswapfile bufhidden=unload buftype=nowrite undolevels=-1 |
+                        \ setlocal noswapfile bufhidden=unload |
                 \ else |
                         \ set eventignore-=FileType |
                 \ endif

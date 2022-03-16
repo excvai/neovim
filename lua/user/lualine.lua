@@ -60,7 +60,16 @@ local progress = function()
 end
 
 local spaces = function()
-	return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
+  local indent_type
+
+  local expandtab = vim.bo.expandtab
+  if expandtab then
+    indent_type = "spaces"
+  else
+    indent_type = "tabs"
+  end
+
+	return indent_type .. ": " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end
 
 lualine.setup({

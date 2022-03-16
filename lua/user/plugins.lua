@@ -67,6 +67,7 @@ return packer.startup(function(use)
   use "mattn/emmet-vim"
   use "kamykn/spelunker.vim"
   use "psliwka/vim-smoothie"
+  use "Darazaki/indent-o-matic"
 
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out

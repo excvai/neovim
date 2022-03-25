@@ -24,6 +24,10 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
+-- Motion alternatives
+keymap("n", "[[", "?{<cr>:noh<cr>", opts)
+keymap("n", "]]", "/}<cr>:noh<cr>", opts)
+
 -- Window splitting
 keymap("n", "<C-w>h", "<C-w>s", opts)
 
@@ -67,6 +71,10 @@ keymap("i", "<F3>", "<C-O>ZT", { noremap = false, silent = true })
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+
+-- Motion alternatives
+keymap("v", "[[", "?{<cr>", opts)
+keymap("v", "]]", "/}<cr>", opts)
 
 -- Replace text without changing register's content
 keymap("v", "p", '"_dp', opts)

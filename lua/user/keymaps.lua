@@ -1,4 +1,5 @@
 local opts = { noremap = true, silent = true }
+local recurs_opts = { noremap = false, silent = true }
 local expr_opts = { noremap = true, silent = true, expr = true }
 
 -- Shorten function name
@@ -25,15 +26,25 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Motion alternatives
-keymap("n", "[[", "?{<cr>:noh<cr>", opts)
-keymap("n", "]]", "/}<cr>:noh<cr>", opts)
+keymap("n", "[[", "[{", opts)
+keymap("n", "]]", "]}", opts)
+
+keymap("n", "]{", "/{<cr>:noh<cr>", opts)
+keymap("n", "]}", "/}<cr>:noh<cr>", opts)
+keymap("n", "[{", "?{<cr>:noh<cr>", opts)
+keymap("n", "[}", "?}<cr>:noh<cr>", opts)
+
+keymap("n", "]<", "/<<cr>:noh<cr>", opts)
+keymap("n", "]>", "/><cr>:noh<cr>", opts)
+keymap("n", "[<", "?<<cr>:noh<cr>", opts)
+keymap("n", "[>", "?><cr>:noh<cr>", opts)
 
 -- Window splitting
 keymap("n", "<C-w>h", "<C-w>s", opts)
 
 -- Toggle spell check
 -- keymap("n", "<F3>", ":set spell!<CR>", opts)
-keymap("n", "<F3>", "ZT", { noremap = false, silent = true })
+keymap("n", "<F3>", "ZT", recurs_opts)
 
 -- Jumplist mutations
 keymap("n", "k", "(v:count > 5 ? \"m\'\" . v:count : \"\") . \'k\'", expr_opts)
@@ -65,7 +76,7 @@ keymap("i", "?", "?<C-g>u", opts)
 
 -- Toggle spell check
 -- keymap("i", "<F3>", "<C-O>:set spell!<CR>", opts)
-keymap("i", "<F3>", "<C-O>ZT", { noremap = false, silent = true })
+keymap("i", "<F3>", "<C-O>ZT", recurs_opts)
 
 -- Visual --
 -- Stay in indent mode
@@ -73,8 +84,18 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Motion alternatives
-keymap("v", "[[", "?{<cr>", opts)
-keymap("v", "]]", "/}<cr>", opts)
+keymap("v", "[[", "[{", opts)
+keymap("v", "]]", "]}", opts)
+
+keymap("v", "]{", "/{<cr>", opts)
+keymap("v", "]}", "/}<cr>", opts)
+keymap("v", "[{", "?{<cr>", opts)
+keymap("v", "[}", "?}<cr>", opts)
+
+keymap("v", "]<", "/<<cr>", opts)
+keymap("v", "]>", "/><cr>", opts)
+keymap("v", "[<", "?<<cr>", opts)
+keymap("v", "[>", "?><cr>", opts)
 
 -- Replace text without changing register's content
 keymap("v", "p", '"_dp', opts)

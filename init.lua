@@ -21,5 +21,6 @@ require "user.whichkey"
 require "user.autocommands"
 require "user.emmet"
 require "user.spelunker"
+require "user.quick-scope"
 
 require "user.helper-functions"

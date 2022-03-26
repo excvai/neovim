@@ -68,6 +68,7 @@ return packer.startup(function(use)
   use "kamykn/spelunker.vim"
   use "psliwka/vim-smoothie"
   use "Darazaki/indent-o-matic"
+  use "unblevable/quick-scope"
 
   -- Colorschemes
   -- use "morhetz/gruvbox"

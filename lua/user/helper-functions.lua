@@ -1,5 +1,10 @@
--- Check diff current buffer with saved buffer
 vim.cmd [[
+function! s:DeleteAllBuffers()
+  exe "bufdo :Bdelete"
+endfunction
+com! Ba call s:DeleteAllBuffers()
+
+" Check diff current buffer with saved buffer
 function! s:DiffWithSaved()
   let filetype=&ft
   diffthis
@@ -8,25 +13,14 @@ function! s:DiffWithSaved()
   exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 com! DiffSaved call s:DiffWithSaved()
-]]
 
-vim.cmd [[
-function! s:DeleteAllBuffers()
-  exe "bufdo :Bdelete"
-endfunction
-com! Ba call s:DeleteAllBuffers()
-]]
-
--- Restore previous cursor position
-vim.cmd [[
+" Restore previous cursor position
 autocmd BufReadPost *
   \ if line("'\"") >= 1 && line("'\"") <= line("$") |
   \   exe "normal! g`\"" |
   \ endif
-]]
 
--- Disable some vim features on large files
-vim.cmd [[
+" Disable some vim features on large files
 augroup LargeFile
         let g:large_file = 512000 " 500kb
 
@@ -46,4 +40,7 @@ augroup LargeFile
                         \ set eventignore-=FileType |
                 \ endif
 augroup END
+
+" Automatically close the tab/vim when nvim-tree is the last window in the tab
+autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
 ]]

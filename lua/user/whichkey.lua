@@ -96,6 +96,7 @@ local mappings = {
     "Find files",
   },
   ["o"] = { ':<C-u>call append(line("."), repeat([""], v:count1))<cr>', "New line" },
+  ["d"] = { "<cmd>cd %:h<cr>", "CD to opened file dir" },
 
   p = {
     name = "Packer",

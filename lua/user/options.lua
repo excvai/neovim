@@ -33,18 +33,11 @@ local options = {
   scrolloff = 4,                           -- is one of my fav
   sidescrolloff = 4,
   spell = false,
-
-  -- Enabling russian/ukrainian language in input mode (use Ctrl-6 to switch between languages)
-  keymap = "russian-jcukenwin",
-  -- keymap = "ukrainian-jcuken",
 }
 
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
-
--- Return english in input mode by default
-vim.cmd "set iminsert=0"
 
 -- Disable html tags rendering (check :help html.vim)
 vim.api.nvim_set_var('html_no_rendering', '1')

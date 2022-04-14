@@ -69,7 +69,7 @@ return packer.startup(function(use)
   use "psliwka/vim-smoothie"
   use "Darazaki/indent-o-matic"
   use "unblevable/quick-scope"
-
+  
   -- Colorschemes
   -- use "morhetz/gruvbox"
   use 'Mofiqul/vscode.nvim'

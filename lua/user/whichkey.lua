@@ -80,7 +80,6 @@ local opts = {
 }
 
 local mappings = {
-  ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
   ["b"] = {
     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "Buffers",
@@ -96,7 +95,12 @@ local mappings = {
     "Find files",
   },
   ["o"] = { ':<C-u>call append(line("."), repeat([""], v:count1))<cr>', "New line" },
-  ["d"] = { "<cmd>cd %:h<cr>", "CD to opened file dir" },
+
+  a = {
+    name = "Additional",
+    a = { "<cmd>Alpha<cr>", "Alpha" },
+    d = { "<cmd>cd %:h<cr>", "CD to opened file dir" },
+  },
 
   p = {
     name = "Packer",

@@ -25,6 +25,9 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
+-- Rename repetitive word
+keymap("n", "<leader>ar", "yiw:.,$s/<C-r>0//Igc<left><left><left><left>", opts)
+
 -- Motion alternatives
 keymap("n", "[[", "[{", opts)
 keymap("n", "]]", "]}", opts)
@@ -82,6 +85,9 @@ keymap("i", "<F3>", "<C-O>ZT", recurs_opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+
+-- Rename repetitive selected text
+keymap("v", "<leader>ar", "y:.,$s/<C-r>0//Igc<left><left><left><left>", opts)
 
 -- Motion alternatives
 keymap("v", "[[", "[{", opts)

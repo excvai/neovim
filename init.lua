@@ -1,3 +1,6 @@
+vim.api.nvim_set_var('do_filetype_lua', 1)
+vim.api.nvim_set_var('did_load_filetypes', 0)
+
 require "user.options"
 require "user.keymaps"
 require "user.plugins"

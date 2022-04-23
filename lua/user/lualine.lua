@@ -80,8 +80,7 @@ lualine.setup({
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
 		always_divide_middle = true,
-    -- TODO: uncomment after upgrade (Available only in neovim 7.0 and higher)
-    -- globalstatus = true,
+    globalstatus = true,
 	},
 	sections = {
 		lualine_a = { branch, diagnostics },

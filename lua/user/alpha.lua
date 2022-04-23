@@ -6,12 +6,20 @@ end
 
 local dashboard = require("alpha.themes.dashboard")
 dashboard.section.header.val = {
-	[[                               __                ]],
-	[[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
-	[[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
-	[[/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
-	[[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
-	[[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
+  [[       ,.,                           ]],
+  [[      MMMM_    ,..,                  ]],
+  [[        "_ "__"MMMMM          ,...,, ]],
+  [[ ,..., __." --"    ,.,     _-"MMMMMMM]],
+  [[MMMMMM"___ "_._   MMM"_."" _ """"""  ]],
+  [[ """""    "" , \_.   "_. ."          ]],
+  [[        ,., _"__ \__./ ."            ]],
+  [[       MMMMM_"  "_    ./             ]],
+  [[        ''''      (    )             ]],
+  [[ ._______________.-'____"---._.      ]],
+  [[  \                          /       ]],
+  [[   \________________________/        ]],
+  [[   (_)                    (_)        ]],
+  [[                                     ]],
 }
 dashboard.section.buttons.val = {
 	dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
@@ -24,7 +32,7 @@ dashboard.section.buttons.val = {
 }
 
 local function footer()
--- NOTE: requires the fortune-mod package to work
+  -- NOTE: requires the fortune-mod package to work
 	-- local handle = io.popen("fortune")
 	-- local fortune = handle:read("*a")
 	-- handle:close()

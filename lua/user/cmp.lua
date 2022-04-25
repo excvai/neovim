@@ -130,6 +130,6 @@ cmp.setup {
     native_menu = false,
   },
   completion = {
-    keyword_length = 3
+    keyword_length = 1
   }
 }

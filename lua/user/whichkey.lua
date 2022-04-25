@@ -95,6 +95,7 @@ local mappings = {
     "Find files",
   },
   ["o"] = { ':<C-u>call append(line("."), repeat([""], v:count1))<cr>', "New line" },
+  ["<Space>"] = { "/<++><cr>:noh<cr>ca<", "Jump to next placeholder" },
 
   a = {
     name = "Additional",

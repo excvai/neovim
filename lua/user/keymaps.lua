@@ -25,6 +25,9 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
+-- Paste text using mouse
+keymap("n", "<MiddleMouse>", "p", opts)
+
 -- Rename repetitive word
 keymap("n", "<leader>ar", "yiw:.,$s:<C-r>0::Igc<left><left><left><left>", opts)
 
@@ -88,6 +91,7 @@ keymap("v", ">", ">gv", opts)
 
 -- Additional way to copy selected text
 keymap("v", "<C-c>", "y", opts)
+keymap("v", "<RightMouse>", "y", opts)
 
 -- Rename repetitive selected text
 keymap("v", "<leader>ar", "y:.,$s:<C-r>0::Igc<left><left><left><left>", opts)

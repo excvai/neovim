@@ -86,6 +86,9 @@ keymap("i", "<F3>", "<C-O>ZT", recurs_opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
+-- Additional way to copy selected text
+keymap("v", "<C-c>", "y", opts)
+
 -- Rename repetitive selected text
 keymap("v", "<leader>ar", "y:.,$s:<C-r>0::Igc<left><left><left><left>", opts)
 
@@ -104,8 +107,8 @@ keymap("v", "[<", "?<<cr>", opts)
 keymap("v", "[>", "?><cr>", opts)
 
 -- Replace text without changing register's content
-keymap("v", "p", '"_dp', opts)
-keymap("v", "P", '"_dP', opts)
+keymap("v", "p", '"_dP', opts)
+keymap("v", "P", '"_dp', opts)
 
 -- Visual Block --
 -- Move text up and down

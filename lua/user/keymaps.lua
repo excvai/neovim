@@ -25,6 +25,14 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
+-- Execute node file
+vim.cmd [[
+autocmd FileType javascript nnoremap <buffer> <F5> :!node %<CR>
+]]
+
+-- Open command line for ":"
+keymap("n", "Q", "q:", opts)
+
 -- Paste text using mouse
 keymap("n", "<MiddleMouse>", "p", opts)
 

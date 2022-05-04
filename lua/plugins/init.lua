@@ -126,7 +126,6 @@ return packer.startup(function(use)
     config = function()
       require "plugins.configs.cmp"
     end,
-    commit = "f51dc68e1bb170fc49c2d7e13eb45e5ec83f5ee9",
   } -- The completion plugin
   use {
     "L3MON4D3/LuaSnip",
@@ -193,7 +192,6 @@ return packer.startup(function(use)
 
   use {
     "nvim-telescope/telescope.nvim",
-    cmd = "Telescope",
     config = function()
       require "plugins.configs.telescope"
     end,

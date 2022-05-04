@@ -3,7 +3,7 @@ if status_ok then
    impatient.enable_profile()
 end
 
--- Opt-in feature to increase performance
+-- Opt-in feature to increase startup performance
 vim.api.nvim_set_var('do_filetype_lua', 1)
 vim.api.nvim_set_var('did_load_filetypes', 0)
 

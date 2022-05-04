@@ -39,10 +39,41 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
--- Disable html tags rendering (check :help html.vim)
-vim.api.nvim_set_var('html_no_rendering', '1')
+local variables = {
+  -- Disable html tags rendering (check :help html.vim)
+  html_no_rendering = 1,
+  -- Setup providers
+  loaded_node_provider = 0,
+  loaded_python3_provider = 0
+}
 
--- Setup providers
-vim.api.nvim_set_var('loaded_node_provider', '0')
-vim.api.nvim_set_var('loaded_python3_provider', '0')
--- vim.api.nvim_set_var('node_host_prog', '/home/cvai/.yarn/bin/neovim-node-host')
+for k, v in pairs(variables) do
+  vim.api.nvim_set_var(k, v)
+end
+
+-- Disable some builtin vim plugins
+local g = vim.g
+local default_plugins = {
+   "2html_plugin",
+   "getscript",
+   "getscriptPlugin",
+   "gzip",
+   "logipat",
+   "netrw",
+   "netrwPlugin",
+   "netrwSettings",
+   "netrwFileHandlers",
+   "matchit",
+   "tar",
+   "tarPlugin",
+   "rrhelper",
+   "spellfile_plugin",
+   "vimball",
+   "vimballPlugin",
+   "zip",
+   "zipPlugin",
+}
+
+for _, plugin in pairs(default_plugins) do
+   g["loaded_" .. plugin] = 1
+end

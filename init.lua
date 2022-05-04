@@ -1,26 +1,23 @@
-require "user.options"
-require "user.keymaps"
-require "user.plugins"
-require "user.colorscheme"
-require "user.cmp"
-require "user.lsp"
-require "user.telescope"
-require "user.treesitter"
-require "user.autopairs"
-require "user.comment"
-require "user.gitsigns"
-require "user.nvim-tree"
-require "user.bufferline"
-require "user.lualine"
-require "user.toggleterm"
-require "user.project"
-require "user.impatient"
-require "user.indentline"
-require "user.alpha"
-require "user.whichkey"
-require "user.autocommands"
-require "user.emmet"
-require "user.spelunker"
-require "user.quick-scope"
+local status_ok, impatient = pcall(require, "impatient")
+if status_ok then
+   impatient.enable_profile()
+end
 
-require "user.helper-functions"
+-- Opt-in feature to increase performance
+vim.api.nvim_set_var('do_filetype_lua', 1)
+vim.api.nvim_set_var('did_load_filetypes', 0)
+
+local required_modules = {
+  "core.options",
+  "core.autocmds",
+  "core.keymaps",
+  "plugins",
+  "core.helper-functions",
+}
+
+for _, module in ipairs(required_modules) do
+  local ok, err = pcall(require, module)
+  if not ok then
+    error("Error loading " .. module .. "\n\n" .. err)
+  end
+end

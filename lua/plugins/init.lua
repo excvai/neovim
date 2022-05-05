@@ -97,14 +97,6 @@ return packer.startup(function(use)
   -- LSP stuff
   use {
     "neovim/nvim-lspconfig",
-    opt = true,
-    setup = function()
-      require("core.utils").packer_lazy_load "nvim-lspconfig"
-      -- reload the current file so lsp actually starts for it
-      vim.defer_fn(function()
-        vim.cmd 'if &ft == "packer" | echo "" | else | silent! e %'
-      end, 0)
-    end,
     config = function()
       require "plugins.configs.lsp"
     end,

@@ -33,6 +33,8 @@ local options = {
   scrolloff = 4,                           -- is one of my fav
   sidescrolloff = 4,
   spell = false,
+  -- foldmethod = "indent",
+  -- foldlevelstart = 20,
 }
 
 for k, v in pairs(options) do

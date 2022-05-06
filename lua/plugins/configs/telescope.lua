@@ -14,12 +14,11 @@ local ignore_list = {
   "%.git",
   "%.github",
   "yarn.lock",
-  "package-lock.json"
-
-  -- "node_modules",
+  "package-lock.json",
+  "node_modules",
   -- ".next",
   -- "out",
-  -- "build"
+  -- "build",
 }
 
 -- Ignore preview of files that are bigger than a threshold

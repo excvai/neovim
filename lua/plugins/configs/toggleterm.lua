@@ -59,3 +59,8 @@ local htop = Terminal:new({ cmd = "htop", hidden = true })
 function _HTOP_TOGGLE()
 	htop:toggle()
 end
+
+local ranger = Terminal:new({ cmd = "ranger", hidden = true })
+function _RANGER_TOGGLE()
+	ranger:toggle()
+end

@@ -65,7 +65,6 @@ local default_plugins = {
    "netrwPlugin",
    "netrwSettings",
    "netrwFileHandlers",
-   "matchit",
    "tar",
    "tarPlugin",
    "rrhelper",

@@ -88,6 +88,9 @@ keymap("i", ".", ".<C-g>u", opts)
 keymap("i", "!", "!<C-g>u", opts)
 keymap("i", "?", "?<C-g>u", opts)
 
+-- Paste text using mouse
+keymap("i", "<MiddleMouse>", "<C-r>+", opts)
+
 -- Toggle spell check
 -- keymap("i", "<F3>", "<C-O>:set spell!<CR>", opts)
 keymap("i", "<F3>", "<C-O>ZT", recurs_opts)
@@ -96,6 +99,9 @@ keymap("i", "<F3>", "<C-O>ZT", recurs_opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+
+-- Paste text using mouse
+keymap("v", "<MiddleMouse>", "p", opts)
 
 -- Additional way to copy selected text
 keymap("v", "<C-c>", "y", opts)

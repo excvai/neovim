@@ -1,4 +1,5 @@
 vim.api.nvim_set_var('qs_highlight_on_keys', {'f', 'F'})
+vim.api.nvim_set_var('qs_max_chars', '150')
 
 vim.cmd [[
 highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline

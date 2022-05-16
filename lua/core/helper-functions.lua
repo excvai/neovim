@@ -17,3 +17,11 @@ com! DiffSaved call s:DiffWithSaved()
 " Automatically close the tab/vim when nvim-tree is the last window in the tab
 autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
 ]]
+
+-- Create packer snapshot with current date before sync
+function PackerSyncWithSnapshot()
+  local date = os.date("%m-%d-%Y-%X")
+  local snapshotName = "auto-" .. date
+  vim.cmd("PackerSnapshot " .. snapshotName)
+  vim.cmd("PackerSync")
+end

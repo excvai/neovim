@@ -1,3 +1,4 @@
+-- TODO: rewrite into lua style
 vim.cmd [[
 function! s:DeleteAllBuffers()
   exe "bufdo :Bdelete"

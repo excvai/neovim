@@ -132,7 +132,7 @@ return packer.startup(function(use)
     after = "cmp_luasnip",
   }
   use {
-   "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-nvim-lsp",
     after = "cmp-nvim-lua",
   }
   use {
@@ -151,6 +151,13 @@ return packer.startup(function(use)
 
   -- Misc plugins
   use {
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require "plugins.configs.colorizer"
+    end,
+  }
+
+  use {
     "windwp/nvim-autopairs",
     after = "nvim-cmp",
     config = function()
@@ -163,6 +170,10 @@ return packer.startup(function(use)
     config = function()
       require "plugins.configs.alpha"
     end,
+  }
+
+  use {
+    "chiedo/vim-px-to-em"
   }
 
   use {

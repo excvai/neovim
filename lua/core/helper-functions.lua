@@ -21,7 +21,7 @@ autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tab
 
 -- Create packer snapshot with current date before sync
 function PackerSyncWithSnapshot()
-  local date = os.date("%m-%d-%Y-%X")
+  local date = os.date("%m-%d-%Y")
   local snapshotName = "auto-" .. date
   vim.cmd("PackerSnapshot " .. snapshotName)
   vim.cmd("PackerSync")

@@ -101,6 +101,7 @@ local mappings = {
     name = "Additional",
     a = { "<cmd>Alpha<cr>", "Alpha" },
     d = { "<cmd>cd %:h<cr>", "CD to opened file dir" },
+    s = { "<cmd>lua Mks()<cr>", "Save current session" },
   },
 
   p = {
@@ -162,6 +163,7 @@ local mappings = {
     l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
     q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
     r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+    R = { "<cmd>TSLspRenameFile<cr>", "Rename file" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
     S = {
       "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",

@@ -26,3 +26,10 @@ function PackerSyncWithSnapshot()
   vim.cmd("PackerSnapshot " .. snapshotName)
   vim.cmd("PackerSync")
 end
+
+-- Wrapper for build-in :mks function
+-- it specifies default path to the last session
+-- You can create bash alias to quickly open this session as well
+function Mks()
+  vim.cmd ":mks! ~/.cache/nvim/LastSession.vim"
+end

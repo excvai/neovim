@@ -95,13 +95,13 @@ local mappings = {
     "Find files",
   },
   ["o"] = { ':<C-u>call append(line("."), repeat([""], v:count1))<cr>', "New line" },
-  ["<Space>"] = { "/<++><cr>:noh<cr>ca<", "Jump to next placeholder" },
 
-  a = {
+  ["<leader>"] = {
     name = "Additional",
     a = { "<cmd>Alpha<cr>", "Alpha" },
-    d = { "<cmd>cd %:h<cr>", "CD to opened file dir" },
+    d = { "<cmd>cd %:h<cr>", "CD to opened file's dir" },
     s = { "<cmd>lua Mks()<cr>", "Save current session" },
+    ["<Space>"] = { "/<++><cr>:noh<cr>ca<", "Jump to next placeholder" },
   },
 
   p = {
@@ -135,7 +135,7 @@ local mappings = {
       "<cmd>Gitsigns diffthis HEAD<cr>",
       "Diff",
     },
-    f = { ":DiffSave<cr>", "Diff with saved"},
+    f = { ":DiffSave<cr>", "Diff with saved" },
   },
 
   l = {

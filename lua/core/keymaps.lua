@@ -88,6 +88,10 @@ keymap("i", ".", ".<C-g>u", opts)
 keymap("i", "!", "!<C-g>u", opts)
 keymap("i", "?", "?<C-g>u", opts)
 
+-- Disable default vim keybindings
+keymap("i", "<C-h>", "<Nop>", opts)
+keymap("i", "<C-l>", "<Nop>", opts)
+
 -- Paste text using mouse
 keymap("i", "<MiddleMouse>", "<C-r>+", opts)
 

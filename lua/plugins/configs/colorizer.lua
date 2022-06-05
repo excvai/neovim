@@ -1,1 +1,2 @@
-require 'colorizer'.setup()
+-- Disable for all Filetypes
+require 'colorizer'.setup {}

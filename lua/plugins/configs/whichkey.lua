@@ -103,6 +103,7 @@ local mappings = {
     d = { "<cmd>cd %:h<cr>", "CD to opened file's dir" },
     s = { "<cmd>lua Mks()<cr>", "Save current session" },
     r = { "yiw:.,$s:<C-r>0::Igc<left><left><left><left>", "Rename repetitive words" },
+    h = { "<cmd>ColorizerToggle<cr>", "Toggle colorizer" },
     ["."] = { "<cmd>source ~/.config/nvim/lua/plugins/configs/cmp/custom-snippets.lua<cr>", "Reload snippets" },
   },
 

@@ -1,7 +1,7 @@
 -- Speed up loading Lua modules to improve startup time
 local status_ok, impatient = pcall(require, "impatient")
 if status_ok then
-   impatient.enable_profile()
+  impatient.enable_profile()
 end
 
 -- Opt-in feature to increase startup performance

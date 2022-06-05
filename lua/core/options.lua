@@ -56,25 +56,25 @@ end
 -- Disable some builtin vim plugins
 local g = vim.g
 local default_plugins = {
-   "2html_plugin",
-   "getscript",
-   "getscriptPlugin",
-   "gzip",
-   "logipat",
-   "netrw",
-   "netrwPlugin",
-   "netrwSettings",
-   "netrwFileHandlers",
-   "tar",
-   "tarPlugin",
-   "rrhelper",
-   "spellfile_plugin",
-   "vimball",
-   "vimballPlugin",
-   "zip",
-   "zipPlugin",
+  "2html_plugin",
+  "getscript",
+  "getscriptPlugin",
+  "gzip",
+  "logipat",
+  "netrw",
+  "netrwPlugin",
+  "netrwSettings",
+  "netrwFileHandlers",
+  "tar",
+  "tarPlugin",
+  "rrhelper",
+  "spellfile_plugin",
+  "vimball",
+  "vimballPlugin",
+  "zip",
+  "zipPlugin",
 }
 
 for _, plugin in pairs(default_plugins) do
-   g["loaded_" .. plugin] = 1
+  g["loaded_" .. plugin] = 1
 end

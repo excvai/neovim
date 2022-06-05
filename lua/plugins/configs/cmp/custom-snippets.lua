@@ -12,6 +12,15 @@ local d = ls.dynamic_node
 local r = ls.restore_node
 
 local ecma_snippets = {
+  -- Snippet for testing purposes
+  p("testsn", "const $1 = {\n  $0\n}"),
+}
+ls.add_snippets("javascript", ecma_snippets)
+ls.add_snippets("javascriptreact", ecma_snippets)
+ls.add_snippets("typescript", ecma_snippets)
+ls.add_snippets("typescriptreact", ecma_snippets)
+
+local ecma_react_snippets = {
   s(
     "usest",
     fmt.fmta("const [<>, <>] = useState(<>);", {
@@ -22,11 +31,7 @@ local ecma_snippets = {
       i(0),
     })
   ),
-  -- Snippet for testing purposes
-  p("testsn", "const $1 = {\n  $0\n}")
+  p("rfc", "\nexport const ${TM_FILENAME_BASE} = () => {\n\treturn (\n\t\t$0\n\t)\n}"),
 }
-
-ls.add_snippets("javascript", ecma_snippets)
-ls.add_snippets("javascriptreact", ecma_snippets)
-ls.add_snippets("typescript", ecma_snippets)
-ls.add_snippets("typescriptreact", ecma_snippets)
+ls.add_snippets("javascriptreact", ecma_react_snippets)
+ls.add_snippets("typescriptreact", ecma_react_snippets)

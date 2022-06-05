@@ -10,8 +10,9 @@ if not snip_status_ok then
   return
 end
 
--- luasnip.config.set_config {
--- }
+luasnip.config.set_config {
+  updateevents = "TextChanged,TextChangedI",
+}
 
 require("luasnip.loaders.from_vscode").lazy_load()
 require "plugins.configs.cmp.custom-snippets"
@@ -54,7 +55,7 @@ cmp.setup {
   },
   mapping = {
     ["<C-k>"] = cmp.mapping.select_prev_item(),
-		["<C-j>"] = cmp.mapping.select_next_item(),
+    ["<C-j>"] = cmp.mapping.select_next_item(),
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i" }),
     ["<C-p>"] = cmp.mapping(cmp.mapping.complete(), { "i" }),

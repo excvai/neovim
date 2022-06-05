@@ -36,9 +36,6 @@ keymap("n", "Q", "q:", opts)
 -- Paste text using mouse
 keymap("n", "<MiddleMouse>", "p", opts)
 
--- Rename repetitive word
-keymap("n", "<leader>ar", "yiw:.,$s:<C-r>0::Igc<left><left><left><left>", opts)
-
 -- Motion alternatives
 keymap("n", "[[", "[{", opts)
 keymap("n", "]]", "]}", opts)

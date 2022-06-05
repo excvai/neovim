@@ -108,44 +108,33 @@ return packer.startup(function(use)
   -- Load luasnips + cmp related in insert mode only
   use {
     "rafamadriz/friendly-snippets",
-    module = "cmp_nvim_lsp",
-    event = "InsertEnter",
   } -- a bunch of snippets to use
   use {
     "hrsh7th/nvim-cmp",
-    after = "friendly-snippets",
     config = function()
       require "plugins.configs.cmp"
     end,
   } -- The completion plugin
   use {
     "L3MON4D3/LuaSnip",
-    wants = "friendly-snippets",
-    after = "nvim-cmp",
   } --snippet engine
   use {
     "saadparwaiz1/cmp_luasnip",
-    after = "LuaSnip",
   } -- snippet completions
   use {
     "hrsh7th/cmp-nvim-lua",
-    after = "cmp_luasnip",
   }
   use {
     "hrsh7th/cmp-nvim-lsp",
-    after = "cmp-nvim-lua",
   }
   use {
     "hrsh7th/cmp-buffer",
-    after = "cmp-nvim-lsp",
   } -- buffer completions
   use {
     "hrsh7th/cmp-path",
-    after = "cmp-buffer"
   } -- path completions
   use {
     "hrsh7th/cmp-cmdline",
-    after = "cmp-path"
   } -- cmdline completions
 
 

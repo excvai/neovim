@@ -2,6 +2,7 @@ local ls = require("luasnip")
 local fmt = require("luasnip.extras.fmt")
 
 local s = ls.snippet
+local p = ls.parser.parse_snippet
 local sn = ls.snippet_node
 local t = ls.text_node
 local i = ls.insert_node
@@ -21,6 +22,8 @@ local ecma_snippets = {
       i(0),
     })
   ),
+  -- Snippet for testing purposes
+  p("testsn", "const $1 = {\n  $0\n}")
 }
 
 ls.add_snippets("javascript", ecma_snippets)

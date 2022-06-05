@@ -95,12 +95,13 @@ local mappings = {
     "Find files",
   },
   ["o"] = { ':<C-u>call append(line("."), repeat([""], v:count1))<cr>', "New line" },
+  ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
 
   ["<leader>"] = {
     name = "Additional",
-    a = { "<cmd>Alpha<cr>", "Alpha" },
     d = { "<cmd>cd %:h<cr>", "CD to opened file's dir" },
     s = { "<cmd>lua Mks()<cr>", "Save current session" },
+    ["."] = { "<cmd>source ~/.config/nvim/lua/plugins/configs/cmp/custom-snippets.lua<cr>", "Reload snippets" },
     ["<Space>"] = { "/<++><cr>:noh<cr>ca<", "Jump to next placeholder" },
   },
 

@@ -33,3 +33,9 @@ end
 function Mks()
   vim.cmd ":mks! ~/.cache/nvim/LastSession.vim"
 end
+
+-- Print a table
+function P(v)
+  print(vim.inspect(v))
+  return v
+end

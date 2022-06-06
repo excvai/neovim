@@ -147,6 +147,10 @@ return packer.startup(function(use)
   }
 
   use {
+    "windwp/nvim-ts-autotag",
+  }
+
+  use {
     "windwp/nvim-autopairs",
     after = "nvim-cmp",
     config = function()

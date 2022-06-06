@@ -20,6 +20,12 @@ ls.add_snippets("javascriptreact", ecma_snippets)
 ls.add_snippets("typescript", ecma_snippets)
 ls.add_snippets("typescriptreact", ecma_snippets)
 
+-- args is a table, where 1 is the text in Placeholder 1, 2 the text in
+-- placeholder 2,...
+local function copy(args)
+  return args[1]
+end
+
 local ecma_react_snippets = {
   s(
     "usest",
@@ -30,6 +36,24 @@ local ecma_react_snippets = {
       end, 1),
       i(0),
     })
+  ),
+  s(
+    "rms", {
+      t("import { "),
+      f(copy, 2),
+      t(", "),
+      f(copy, 2),
+      t("Props } from '@mui/material'"),
+      t({ "", "import { styled } from '@mui/system'", "", "export const " }),
+      i(1),
+      t(" = styled("),
+      i(2),
+      t(")<"),
+      f(copy, 2),
+      t({"Props>({", ""}),
+      i(0),
+      t("});")
+    }
   ),
   p("rfc", "\nexport const ${TM_FILENAME_BASE} = () => {\n\treturn (\n\t\t$0\n\t)\n}"),
 }

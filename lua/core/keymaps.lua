@@ -25,6 +25,9 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
+-- Append semicolon
+keymap("n", "<S-Cr>", "A;<cr>", opts)
+
 -- Execute node file
 vim.cmd [[
 autocmd FileType javascript nnoremap <buffer> <F5> :!node %<CR>
@@ -84,6 +87,9 @@ keymap("i", ",", ",<C-g>u", opts)
 keymap("i", ".", ".<C-g>u", opts)
 keymap("i", "!", "!<C-g>u", opts)
 keymap("i", "?", "?<C-g>u", opts)
+
+-- Append semicolon
+keymap("i", "<S-Cr>", "<Esc>A;<cr>", opts)
 
 -- Disable default vim keybindings
 keymap("i", "<C-h>", "<Nop>", opts)

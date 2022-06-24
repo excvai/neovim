@@ -5,7 +5,7 @@ if not status_ok then
 end
 
 configs.setup {
-  ensure_installed = { "lua", "bash", "javascript", "typescript", "python", "tsx", "css", "scss" },
+  ensure_installed = { "lua", "bash", "javascript", "typescript", "python", "tsx", "css", "scss", "dockerfile", "yaml" },
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
   ignore_install = { "html" }, -- List of parsers to ignore installing
   autopairs = {
@@ -16,10 +16,9 @@ configs.setup {
   },
   highlight = {
     enable = true, -- false will disable the whole extension
-    disable = { "html" }, -- list of language that will be disabled
     additional_vim_regex_highlighting = false,
   },
-  indent = { enable = true, disable = { "yaml", "css", "scss", "html" } },
+  indent = { enable = true, disable = { "yaml", "css", "scss" } },
   context_commentstring = {
     enable = true,
     enable_autocmd = false,

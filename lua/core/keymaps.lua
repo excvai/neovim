@@ -13,7 +13,7 @@ vim.g.maplocalleader = " "
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
---   visual_mode = "v",
+--   visual_mode = "v", (use x instead of v to prevent keybindings in select mode)
 --   visual_block_mode = "x",
 --   term_mode = "t",
 --   command_mode = "c",
@@ -103,39 +103,40 @@ keymap("i", "<MiddleMouse>", "<C-r>+", opts)
 keymap("i", "<F3>", "<C-O>ZT", recurs_opts)
 
 -- Visual --
--- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
-
--- Paste text using mouse
-keymap("v", "<MiddleMouse>", "p", opts)
-
--- Additional way to copy selected text
-keymap("v", "<C-c>", "y", opts)
-keymap("v", "<RightMouse>", "y", opts)
-
--- Rename repetitive selected text
-keymap("v", "<leader>ar", "y:.,$s:<C-r>0::Igc<left><left><left><left>", opts)
-
--- Motion alternatives
-keymap("v", "[[", "[{", opts)
-keymap("v", "]]", "]}", opts)
-
-keymap("v", "]{", "/{<cr>", opts)
-keymap("v", "]}", "/}<cr>", opts)
-keymap("v", "[{", "?{<cr>", opts)
-keymap("v", "[}", "?}<cr>", opts)
-
-keymap("v", "]<", "/<<cr>", opts)
-keymap("v", "]>", "/><cr>", opts)
-keymap("v", "[<", "?<<cr>", opts)
-keymap("v", "[>", "?><cr>", opts)
-
--- Replace text without changing register's content
-keymap("v", "p", '"_dP', opts)
-keymap("v", "P", '"_dp', opts)
 
 -- Visual Block --
 -- Move text up and down
 keymap("x", "<A-j>", ":m '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":m '<-2<CR>gv-gv", opts)
+
+-- Stay in indent mode
+keymap("x", "<", "<gv", opts)
+keymap("x", ">", ">gv", opts)
+
+-- Paste text using mouse
+keymap("x", "<MiddleMouse>", "p", opts)
+
+-- Additional way to copy selected text
+keymap("x", "<C-c>", "y", opts)
+keymap("x", "<RightMouse>", "y", opts)
+
+-- Rename repetitive selected text
+keymap("x", "<leader>ar", "y:.,$s:<C-r>0::Igc<left><left><left><left>", opts)
+
+-- Motion alternatives
+keymap("x", "[[", "[{", opts)
+keymap("x", "]]", "]}", opts)
+
+keymap("x", "]{", "/{<cr>", opts)
+keymap("x", "]}", "/}<cr>", opts)
+keymap("x", "[{", "?{<cr>", opts)
+keymap("x", "[}", "?}<cr>", opts)
+
+keymap("x", "]<", "/<<cr>", opts)
+keymap("x", "]>", "/><cr>", opts)
+keymap("x", "[<", "?<<cr>", opts)
+keymap("x", "[>", "?><cr>", opts)
+
+-- Replace text without changing register's content
+keymap("x", "p", '"_dP', opts)
+keymap("x", "P", '"_dp', opts)

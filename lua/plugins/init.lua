@@ -80,6 +80,10 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter-textobjects",
     after = "nvim-treesitter"
   }
+  use {
+    "nvim-treesitter/playground",
+    after = "nvim-treesitter"
+  }
 
   -- Git stuff
   use {

@@ -20,6 +20,8 @@ end
 local ecma_snippets = {
   -- Snippet for testing purposes
   p("testsn", "const $1 = {\n  $0\n}"),
+  p("cl", "console.log($0)"),
+  p(">", "($2) => {\n\t$1\n}"),
 }
 ls.add_snippets("javascript", ecma_snippets)
 ls.add_snippets("javascriptreact", ecma_snippets)

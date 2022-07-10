@@ -19,8 +19,7 @@ null_ls.setup({
       end,
     }),
     code_actions.eslint_d,
-    formatting.prettier.with({
-      extra_args = { "--single-quote", "--jsx-single-quote" },
+    formatting.prettierd.with({
       disabled_filetypes = { "html" }
     })
   },

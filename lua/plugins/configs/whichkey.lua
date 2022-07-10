@@ -97,6 +97,8 @@ local mappings = {
   ["o"] = { ':<C-u>call append(line("."), repeat([""], v:count1))<cr>', "New line" },
   ["<Space>"] = { "/<++><cr>:noh<cr>ca<", "Jump to next placeholder" },
   [";"] = { "A;<esc>", "Append semicolon" },
+  [">"] = { "<cmd>BufferLineMoveNext<CR>", "Move buffer forwards" },
+  ["<"] = { "<cmd>BufferLineMovePrev<CR>", "Move buffer backwards" },
 
   a = {
     name = "Additional",

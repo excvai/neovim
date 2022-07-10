@@ -151,6 +151,13 @@ return packer.startup(function(use)
   }
 
   use {
+    "lyokha/vim-xkbswitch",
+    config = function()
+      require "plugins.configs.xkbswitch"
+    end
+  }
+
+  use {
     "windwp/nvim-ts-autotag",
   }
 
@@ -183,7 +190,6 @@ return packer.startup(function(use)
 
   use {
     "kyazdani42/nvim-tree.lua",
-    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
     config = function()
       require "plugins.configs.nvim-tree"
     end,
